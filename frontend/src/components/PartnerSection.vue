@@ -27,25 +27,18 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   data() {
     return {
-      partners: [],
-      loading: true,
+      partners: [
+        { _id: 1, name: "Asya Medika", description: "Leading distributor of medical laboratory equipment and reagents across the Philippines.", image: "asya-medika.webp" },
+        { _id: 2, name: "BioSystems", description: "Global manufacturer of clinical chemistry and immunoassay analyzers for diagnostic laboratories.", image: "biosystems.webp" },
+        { _id: 3, name: "Indoplas Philippines", description: "Premier supplier of medical disposables, laboratory consumables, and healthcare products.", image: "indoplas-philippines.webp" },
+        { _id: 4, name: "Macromed Philippines", description: "Trusted provider of advanced diagnostic instruments and laboratory automation solutions.", image: "macromed-philippines.webp" },
+        { _id: 5, name: "MeDev Medical Devices", description: "Specialized in innovative medical devices and point-of-care diagnostic technologies.", image: "medev-medical-devices.webp" },
+      ],
+      loading: false,
     };
-  },
-  async created() {
-    try {
-      const response = await axios.get("http://localhost:3002/api/partners");
-      // console.log("Response data:", response.data); For Debugging
-      this.partners = response.data;
-    } catch (error) {
-      console.error("Error fetching partners:", error);
-    } finally {
-      this.loading = false;
-    }
   },
 };
 </script>
